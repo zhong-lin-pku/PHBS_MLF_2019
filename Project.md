@@ -38,6 +38,7 @@ We study the parameters for each stock seperately, and the most simple method is
 And the average results for all stocks are listed here: 
 
 training accuracy is:  96.86%
+
 testing accuracy is:  52.13%
 ### Method 2
 Logically speaking, we could not forecast the past with future data, so then we do another test, we use the samples in 2017 and 2018 as the training set, and the samples in 2019 as the testing set. And we are now interested in each week's results in 2019. 
@@ -47,12 +48,18 @@ The results are listed below. the average testing accuracy is 52.59%, and each w
 We can also see the F1 score and the confusion matrix:
 
 accuracy_score is: 0.5259057730590577
+
 precision_score is:  0.4416550979484806
+
 recall_score is:  0.35027678380279537
+
 f1_score is:  0.3906940251411418
+
 ![Decision Tree Method 2](image/pic_confusion_matrix.bmp)
 We can find out that more than half of the stocks didn't beat the market, one of the reasons is that we use simple averages instead of market capitalization weighted averages, so the accuracy score and precision score are underestimated. 
 
 If we set one parameter of the function, average as "weighted", which means we calculate metrics for each label, and find their average weighted by support, and can account for label imbalance, we find the results here: 
+
 precision_score is:  0.5143724083513994
+
 recall_score is:  0.5259057730590577
